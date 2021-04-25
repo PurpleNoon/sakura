@@ -1,12 +1,15 @@
 import ElButton from 'ele/button/src/button.vue'
-import { Template } from './Template'
+import { Template, argTypes } from './Template'
 
 export default {
-  title: 'Element/Button-Icon',
+  title: 'Element/Button/Icon',
   component: ElButton,
   args: {
     type: 'primary',
-  }
+  },
+  argTypes: {
+    ...argTypes,
+  },
 }
 
 export const Icon = Template.bind({})

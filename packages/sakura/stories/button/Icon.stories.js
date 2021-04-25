@@ -1,12 +1,15 @@
-import ElButton from 'sakura/button/src/button.vue'
-import { Template } from './Template'
+import SrButton from 'sakura/button/src/button.vue'
+import { Template, argTypes } from './Template'
 
 export default {
-  title: 'Element/Button-Icon',
-  component: ElButton,
+  title: 'Sakura/Button/Icon',
+  component: SrButton,
   args: {
     type: 'primary',
-  }
+  },
+  argTypes: {
+    ...argTypes,
+  },
 }
 
 export const Icon = Template.bind({})
@@ -22,11 +25,11 @@ IconWithText.args = {
 
 
 const IconWithContentTemplate = (args, { argTypes }) => ({
-  components: { ElButton },
+  components: { SrButton },
   setup() {
     return { args }
   },
-  template: `<el-button v-bind="args">上传<i class="el-icon-edit el-icon--right"></i></el-button>`
+  template: `<sr-button v-bind="args">上传<i class="el-icon-edit el-icon--right"></i></sr-button>`
 })
 
 export const IconWithContent = IconWithContentTemplate.bind({})

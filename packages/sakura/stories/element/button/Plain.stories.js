@@ -6,15 +6,18 @@ import {
   Warning,
   Danger
 } from './Type.stories'
-import { Template } from './Template'
+import { Template, argTypes } from './Template'
 import ElButton from 'ele/button/src/button.vue'
 
 export default {
-  title: 'Element/Button-Plain',
+  title: 'Element/Button/Plain',
   component: ElButton,
   args: {
-    plain: true
-  }
+    plain: true,
+  },
+  argTypes: {
+    ...argTypes,
+  },
 }
 
 export const PlainNormal = Template.bind({})

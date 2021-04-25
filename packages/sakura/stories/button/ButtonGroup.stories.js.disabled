@@ -5,12 +5,12 @@
 //   Info,
 //   Warning,
 //   Danger
-// } from './ElButton-Type.stories'
+// } from './SrButton-Type.stories'
 // import { Template } from './Template'
-// import ElButton from 'sakura/button/src/button.vue'
+// import SrButton from 'sakura/button/src/button.vue'
 
 // export default {
-//   title: 'Element/Button-Group',
-//   component: ElButton,
+//   title: 'Sakura/Button/ButtonGroup',
+//   component: SrButton,
 // }
 

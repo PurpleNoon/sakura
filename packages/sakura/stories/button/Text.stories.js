@@ -1,9 +1,12 @@
-import ElButton from 'sakura/button/src/button.vue'
-import { Template } from './Template'
+import SrButton from 'sakura/button/src/button.vue'
+import { Template, argTypes } from './Template'
 
 export default {
-  title: 'Element/Button-Text',
-  component: ElButton,
+  title: 'Sakura/Button/Text',
+  component: SrButton,
+  argTypes: {
+    ...argTypes,
+  },
 }
 
 export const Text = Template.bind({})

@@ -6,15 +6,18 @@ import {
   Warning,
   Danger
 } from './Type.stories'
-import { Template } from './Template'
+import { Template, argTypes } from './Template'
 import ElButton from 'ele/button/src/button.vue'
 
 export default {
-  title: 'Element/Button-Round',
+  title: 'Element/Button/Round',
   component: ElButton,
   args: {
-    round: true
-  }
+    round: true,
+  },
+  argTypes: {
+    ...argTypes,
+  },
 }
 
 export const RoundNormal = Template.bind({})

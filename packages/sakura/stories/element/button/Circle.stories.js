@@ -6,17 +6,20 @@ import {
   Warning,
   Danger
 } from './Type.stories'
-import { Template } from './Template'
+import { Template, argTypes } from './Template'
 import ElButton from 'ele/button/src/button.vue'
 
 export default {
-  title: 'Element/Button-Circle',
+  title: 'Element/Button/Circle',
   component: ElButton,
   args: {
     circle: true,
     icon: 'el-icon-search',
     // _text: 'O'
-  }
+  },
+  argTypes: {
+    ...argTypes,
+  },
 }
 
 export const CircleNormal = Template.bind({})

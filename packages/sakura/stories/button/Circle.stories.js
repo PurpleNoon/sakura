@@ -6,17 +6,20 @@ import {
   Warning,
   Danger
 } from './Type.stories'
-import { Template } from './Template'
-import ElButton from 'sakura/button/src/button.vue'
+import { Template, argTypes } from './Template'
+import SrButton from 'sakura/button/src/button.vue'
 
 export default {
-  title: 'Element/Button-Circle',
-  component: ElButton,
+  title: 'Sakura/Button/Circle',
+  component: SrButton,
   args: {
     circle: true,
     icon: 'el-icon-search',
-    // _text: 'O'
-  }
+    // _text: 'O',
+  },
+  argTypes: {
+    ...argTypes,
+  },
 }
 
 export const CircleNormal = Template.bind({})

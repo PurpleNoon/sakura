@@ -6,16 +6,19 @@ import {
   Warning,
   Danger
 } from './Type.stories'
-import { Template } from './Template'
-import ElButton from 'sakura/button/src/button.vue'
+import { Template, argTypes } from './Template'
+import SrButton from 'sakura/button/src/button.vue'
 
 export default {
-  title: 'Element/Button-PlainDisabled',
-  component: ElButton,
+  title: 'Sakura/Button/PlainDisabled',
+  component: SrButton,
   args: {
     disabled: true,
-    plain: true
-  }
+    plain: true,
+  },
+  argTypes: {
+    ...argTypes,
+  },
 }
 
 export const PlainDisabledNormal = Template.bind({})

@@ -1,9 +1,12 @@
 import ElButton from 'ele/button/src/button.vue'
-import { Template } from './Template'
+import { Template, argTypes } from './Template'
 
 export default {
-  title: 'Element/Button-Text',
+  title: 'Element/Button/Text',
   component: ElButton,
+  argTypes: {
+    ...argTypes,
+  },
 }
 
 export const Text = Template.bind({})
