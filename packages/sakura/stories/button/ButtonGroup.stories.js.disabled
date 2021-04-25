@@ -1,0 +1,16 @@
+// import {
+//   Normal,
+//   Primary,
+//   Success,
+//   Info,
+//   Warning,
+//   Danger
+// } from './ElButton-Type.stories'
+// import { Template } from './Template'
+// import ElButton from 'sakura/button/src/button.vue'
+
+// export default {
+//   title: 'Element/Button-Group',
+//   component: ElButton,
+// }
+

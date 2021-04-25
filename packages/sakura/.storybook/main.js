@@ -1,11 +1,13 @@
+const fs = require('fs');
 const path = require('path');
+const resolve = (...dirs) => path.resolve(__dirname, ...dirs);
 
 module.exports = {
   stories: [
-    "../src/**/*.stories.mdx",
-    "../src/**/*.stories.@(js|jsx|ts|tsx)",
     "../packages/**/*.stories.mdx",
     "../packages/**/*.stories.@(js|jsx|ts|tsx)",
+    "../stories/**/*.stories.mdx",
+    "../stories/**/*.stories.@(js|jsx|ts|tsx)",
   ],
   addons: [
     "@storybook/addon-links",
@@ -21,8 +23,16 @@ module.exports = {
     config.module.rules.push({
       test: /\.scss$/,
       use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
-      include: path.resolve(__dirname, '../'),
+      include: [
+        path.resolve(__dirname, '../'),
+        path.resolve(__dirname, '../../element'),
+      ],
     });
+
+    config.resolve.alias['sakura'] = resolve('../packages')
+    config.resolve.alias['sakura-style'] = resolve('../packages/theme-chalk/src')
+    config.resolve.alias['ele'] = resolve('../../element/packages')
+    config.resolve.alias['ele-style'] = resolve('../../element/packages/theme-chalk/src')
 
     // Return the altered config
     return config;
