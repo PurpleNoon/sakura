@@ -12,7 +12,13 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
-    "types": ["vite/client", "jest"]
+    "types": ["vite/client", "jest"],
+    "paths": {
+      "sakura/*": ["./packages/*"],
+      "sakura-style/*": ["./packages/theme-chalk/src/*"],
+      "ele/*": ["../element/packages/*"],
+      "ele-style/*": ["../element/packages/theme-chalk/src/*"],
+    }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/stories/Button.stories.js", "test/unit/**/*.spec.ts"]
 }

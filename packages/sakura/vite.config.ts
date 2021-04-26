@@ -22,5 +22,13 @@ export default defineConfig({
   //     }
   //   }
   // },
+  resolve: {
+    alias: {
+      'sakura': path.resolve(__dirname, './packages'),
+      'sakura-style': path.resolve(__dirname, './packages/theme-chalk/src'),
+      'ele': path.resolve(__dirname, '../element/packages'),
+      'ele-style': path.resolve(__dirname, '../element/packages/theme-chalk/src'),
+    }
+  },
   plugins: [vue()],
 })
