@@ -1,4 +1,3 @@
-const fs = require('fs');
 const path = require('path');
 const resolve = (...dirs) => path.resolve(__dirname, ...dirs);
 
@@ -12,7 +11,7 @@ module.exports = {
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "@storybook/addon-postcss"
+    "@storybook/addon-postcss",
   ],
   webpackFinal: async (config, { configType }) => {
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
@@ -27,6 +26,7 @@ module.exports = {
         path.resolve(__dirname, '../'),
         path.resolve(__dirname, '../../element'),
       ],
+      exclude: /node_modules/,
     });
 
     config.resolve.alias['sakura'] = resolve('../packages')
