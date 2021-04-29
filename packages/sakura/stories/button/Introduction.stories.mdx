@@ -1,0 +1,88 @@
+import {
+  Meta,
+  Story,
+  Canvas,
+  ArgsTable,
+  Source,
+} from '@storybook/addon-docs/blocks'
+import SrButton from 'sakura/button/src/button.vue'
+import { Template, argTypes } from './Template'
+import dedent from 'ts-dedent';
+
+<Meta
+  title="Sakura/Button/Introduction"
+  component={SrButton}
+  argTypes={{
+    ...argTypes
+  }}
+/>
+
+# Button 按钮
+常用的操作按钮。
+
+## 基础用法
+基础的按钮用法。
+
+<Canvas>
+  <Story
+    name="default"
+    args={{
+      _text: 'Default',
+    }}
+  >
+    {(args, { argTypes }) => ({
+      components: { SrButton },
+      setup() {
+        return { args }
+      },
+      template: `<sr-button v-bind="args">{{args._text}}</sr-button>`,
+    })}
+  </Story>
+  <Story
+    name="primary"
+    args={{
+      type: 'primary',
+      _text: 'Primary',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="success"
+    args={{
+      type: 'success',
+      _text: 'Success',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="roundedDefault"
+    args={{
+      rounded: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="roundedPrimary"
+    args={{
+      type: 'primary',
+      rounded: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="roundedSuccess"
+    args={{
+      type: 'success',
+      rounded: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Attributes
+<ArgsTable of={SrButton} />
