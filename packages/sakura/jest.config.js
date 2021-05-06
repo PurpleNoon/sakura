@@ -8,7 +8,11 @@ module.exports = {
   moduleFileExtensions: ['vue', 'js', 'json', 'jsx', 'ts', 'tsx', 'node'],
   // 别名设置
   moduleNameMapper: {
-    // '@/(.*)$': '<rootDir>/src/components/$1'
+    'sakura/(.*)$': '<rootDir>/packages/$1',
+    'sakura-style/(.*)$': '<rootDir>/packages/theme-chalk/src/$1',
+    'ele/(.*)$': '<rootDir>/../element/packages/$1',
+    'ele-style/(.*)$': '<rootDir>/../element/packages/theme-chalk/src/$1',
+    '^sakura-ui$': '<rootDir>/src/index.ts',
   },
   preset: 'ts-jest',
   testEnvironment: 'jsdom',

@@ -28,6 +28,7 @@ export default defineConfig({
       'sakura-style': path.resolve(__dirname, './packages/theme-chalk/src'),
       'ele': path.resolve(__dirname, '../element/packages'),
       'ele-style': path.resolve(__dirname, '../element/packages/theme-chalk/src'),
+      'sakura-ui': path.resolve(__dirname, './src/index.ts'),
     }
   },
   plugins: [vue()],

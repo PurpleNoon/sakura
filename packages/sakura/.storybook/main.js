@@ -32,6 +32,7 @@ module.exports = {
     config.resolve.alias['sakura-style'] = resolve('../packages/theme-chalk/src')
     config.resolve.alias['ele'] = resolve('../../element/packages')
     config.resolve.alias['ele-style'] = resolve('../../element/packages/theme-chalk/src')
+    config.resolve.alias['sakura-ui'] = resolve('../src/index.ts')
 
     // Return the altered config
     return config;

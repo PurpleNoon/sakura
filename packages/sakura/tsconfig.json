@@ -18,6 +18,7 @@
       "sakura-style/*": ["./packages/theme-chalk/src/*"],
       "ele/*": ["../element/packages/*"],
       "ele-style/*": ["../element/packages/theme-chalk/src/*"],
+      "sakura-ui": ["./src/index.ts"],
     }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/stories/Button.stories.js", "test/unit/**/*.spec.ts"]
