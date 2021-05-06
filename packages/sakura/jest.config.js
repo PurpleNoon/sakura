@@ -17,7 +17,10 @@ module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
   // 测试文件
-  // testMatch: ['<rootDir>/tests/unit/*.spec.ts?(x)'],
+  testMatch: [
+    '<rootDir>/test/unit/*.spec.ts?(x)',
+    '<rootDir>/packages/**/*.spec.ts?(x)',
+  ],
 
   transform: {
     '^.+\\.vue$': 'vue-jest',
