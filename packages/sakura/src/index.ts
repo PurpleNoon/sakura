@@ -1,8 +1,10 @@
-import Button from 'sakura/button/index'
 import { App } from 'vue'
+import Button from 'sakura/button/index'
+import ButtonGroup from 'sakura/button-group/index'
 
 const components = [
   Button,
+  ButtonGroup,
 ]
 
 interface ElementOptions {
@@ -25,4 +27,5 @@ export default {
   version: '0.0.1',
   install,
   Button,
+  ButtonGroup,
 }
