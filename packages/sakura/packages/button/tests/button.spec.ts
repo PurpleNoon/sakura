@@ -1,19 +1,20 @@
 import { mount } from '@vue/test-utils'
-import SrButton from '../src/button.vue'
+import Button from '../src/button.vue'
+import ButtonGroup from '../src/button-group.vue'
 
 test('test button display content', () => {
-  const wrapper = mount(SrButton, {
+  const wrapper = mount(Button, {
     slots: {
-      default: `SrButton`
+      default: `Button`
     }
   })
 
-  expect(wrapper.text()).toContain('SrButton')
+  expect(wrapper.text()).toContain('Button')
 })
 
 describe('test button type prop', () => {
   test('default', async () => {
-    const wrapper = await mount(SrButton)
+    const wrapper = await mount(Button)
 
     expect(wrapper.classes('sr-button')).toBe(true)
   })
@@ -29,7 +30,7 @@ describe('test button type prop', () => {
 
   types.forEach(buttonType => {
     test(buttonType, async () => {
-      const wrapper = await mount(SrButton, {
+      const wrapper = await mount(Button, {
         props: {
           type: buttonType
         }
@@ -49,7 +50,7 @@ describe('test button size prop', () => {
 
   sizes.forEach(buttonSize => {
     test(buttonSize, async () => {
-      const wrapper = await mount(SrButton, {
+      const wrapper = await mount(Button, {
         props: {
           size: buttonSize
         }
@@ -61,7 +62,7 @@ describe('test button size prop', () => {
 })
 
 test('test button plain prop', async () => {
-  const wrapper = await mount(SrButton, {
+  const wrapper = await mount(Button, {
     props: {
       plain: true
     }
@@ -71,7 +72,7 @@ test('test button plain prop', async () => {
 })
 
 test('test button round prop', async () => {
-  const wrapper = await mount(SrButton, {
+  const wrapper = await mount(Button, {
     props: {
       round: true
     }
@@ -81,7 +82,7 @@ test('test button round prop', async () => {
 })
 
 test('test button circle prop', async () => {
-  const wrapper = await mount(SrButton, {
+  const wrapper = await mount(Button, {
     props: {
       circle: true
     }
@@ -91,7 +92,7 @@ test('test button circle prop', async () => {
 })
 
 test('test button loading prop', async () => {
-  const wrapper = await mount(SrButton, {
+  const wrapper = await mount(Button, {
     props: {
       loading: true
     }
@@ -104,7 +105,7 @@ test('test button loading prop', async () => {
 })
 
 test('test button disabled prop', async () => {
-  const wrapper = await mount(SrButton, {
+  const wrapper = await mount(Button, {
     props: {
       disabled: true
     }
@@ -117,7 +118,7 @@ test('test button disabled prop', async () => {
 
 test('test button icon prop', async () => {
   const icon = 'el-icon-edit'
-  const wrapper = await mount(SrButton, {
+  const wrapper = await mount(Button, {
     props: {
       icon
     }
@@ -128,7 +129,7 @@ test('test button icon prop', async () => {
 
 describe('test button nativeType prop', () => {
   test('default', async () => {
-    const wrapper = mount(SrButton)
+    const wrapper = mount(Button)
 
     expect(wrapper.attributes('type')).toBe('button')
   })
@@ -142,7 +143,7 @@ describe('test button nativeType prop', () => {
   nativeTypes.forEach(nativeType => {
     test(nativeType, async () => {
 
-      const wrapper = await mount(SrButton, {
+      const wrapper = await mount(Button, {
         props: {
           nativeType
         }
@@ -151,5 +152,22 @@ describe('test button nativeType prop', () => {
       expect(wrapper.attributes('type')).toBe(nativeType)
     })
   })
+})
+
+test('test button group display content', async () => {
+  const wrapper = mount({
+    components: {
+      Button,
+      ButtonGroup,
+    },
+    template: `
+      <ButtonGroup>
+        <Button>Button1</Button>
+        <Button>Button2</Button>
+      </ButtonGroup>
+    `
+  })
+
+  expect(wrapper.findAllComponents(Button).length).toBe(2)
 })
 
